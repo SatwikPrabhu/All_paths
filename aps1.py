@@ -114,9 +114,10 @@ def calc_all_paths(G,a1,a2):
                     print(b1,b2,len(intervals1[(b1,b2)]))
                     b3 = (b1+b2)/2
                     del intervals[(b1,b2)]
-                    if b2-b1<=1:
+                    if int(b2)-int(b1)<=1:
                         for S in intervals1[(b1,b2)]:
                             paths[R][S][(b1,b2)] = p[b1][S]
+                        continue
                     intervals[(b1,b3)]=[]
                     intervals[(b3,b2)] = []
                     p[b3] = calc_paths_single_rcvr(G,R,b3,p[b1],intervals1[(b1,b2)])
