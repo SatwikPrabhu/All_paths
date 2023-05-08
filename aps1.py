@@ -122,3 +122,5 @@ def calc_all_paths(G,a1,a2):
     return paths
 
 p = calc_all_paths(G,1,1000)
+with open('all_paths.json','w') as f:
+    json.dump(p,f)
